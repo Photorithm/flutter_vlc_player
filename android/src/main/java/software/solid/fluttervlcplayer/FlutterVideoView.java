@@ -231,6 +231,10 @@ class FlutterVideoView implements PlatformView, MethodChannel.MethodCallHandler,
 
                 result.success(null);
                 break;
+            case "setMuted":
+                boolean isMuted = Boolean.parseBoolean((String) methodCall.argument("isMuted"));
+                mediaPlayer.setVolume(isMuted ? 0 : 100);
+                break;
         }
     }
 
