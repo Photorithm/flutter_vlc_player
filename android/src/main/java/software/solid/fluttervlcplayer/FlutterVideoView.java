@@ -225,7 +225,6 @@ class FlutterVideoView implements PlatformView, MethodChannel.MethodCallHandler,
                 break;
 
             case "setTime":
-
                 long time = Long.parseLong((String) methodCall.argument("time"));
                 mediaPlayer.setTime(time);
 
@@ -234,6 +233,8 @@ class FlutterVideoView implements PlatformView, MethodChannel.MethodCallHandler,
             case "setMuted":
                 boolean isMuted = Boolean.parseBoolean((String) methodCall.argument("isMuted"));
                 mediaPlayer.setVolume(isMuted ? 0 : 100);
+
+                result.success(null);
                 break;
         }
     }

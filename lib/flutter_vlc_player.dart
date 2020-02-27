@@ -328,10 +328,10 @@ class VlcPlayerController {
         .invokeMethod("setPlaybackSpeed", {'speed': speed.toString()});
   }
 
-  Future<void> setMute(bool isMuted) async {
+  Future<void> setMuted(bool isMuted) async {
     _isMuted = isMuted;
     await _methodChannel
-        .invokeMethod("setMute", {"isMuted": isMuted.toString()});
+        .invokeMethod("setMuted", {"isMuted": isMuted.toString()});
   }
 
   Future<Uint8List> takeSnapshot() async {
